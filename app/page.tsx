@@ -1,12 +1,15 @@
 import { CardContato } from '@/components/CardContato';
-import { CardLayout } from '@/components/CardsLayout';
+
 import { TextInfoSessãoPrice } from '@/components/textInfoSessãoPrice';
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import DragHandleIcon from '@mui/icons-material/DragHandle';
+
 import Image from "next/image"
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -18,13 +21,14 @@ export default function Home() {
           className="flex items-end rounded-t-[40px] mt-2 bg-white w-full  "
         >
           <div className="flex w-full justify-around mt-16">
-            <h1 className='font-bold text-3xl'>DevRemote</h1>
+          <Link href="/Home"  className='font-bold text-3xl'> DevRemote</Link>
+         
             <div className="flex gap-6">
               <Button
 
                 className="py-5 rounded-full text-sm  shadow-xl"
               >
-                Contact us
+             <Link href="/Contact" className='text-sm font-bold text-white '> Contact us</Link>
               </Button>
               <Sheet>
 
@@ -52,7 +56,9 @@ export default function Home() {
 
           </section>
 
-          <section id='card' className="flex items-end rounded-t-[40px]  rounded-b-[40px]   mt-2 bg-gray-950 w-full h-[450px]"> </section>
+          <section id='card' className="flex  rounded-t-[40px]  rounded-b-[40px]   mt-2 bg-gray-950 w-full h-[450px]"> 
+          <h1></h1>
+          </section>
 
           <h1 className=' font-sans font-medium text-5xl break-all mt-44 ml-80 text-gray-800'>
             Harnessing technology for <br /> a brighter future
@@ -78,17 +84,13 @@ export default function Home() {
 
           </div>
         </main>
-        <section  id="Sessão  banner devRemote" className="flex  bg-gray-50 w-full h-[500px]" >
-          <h1 className='z-20'>"Remote Collaboration, Real Impact: Transforming the World with Web and Mobile Cutting-Edge Apps."</h1>
-          <div className="flex flex-col mt-1  ">
-            <CardLayout />
-            <CardLayout />
-            <CardLayout />
-            <CardLayout />
-            <CardLayout />
-          </div>
+       
+        
+        <section id="Sessão  banner devRemote" className="flex items-center justify-center    bg-gray-50 w-full h-[450px]"><h1 className=' text-gray-800 font-bold text-9xl'>DevRemote</h1> </section>
 
-        </section>
+           
+          
+
 
         <section id=" Sessão como Trabalamos" className="flex flex-col  bg-white  w-full h-full ">
           
@@ -113,7 +115,7 @@ export default function Home() {
               </p>
 
               <h1 className=' font-sans font-bold text-2sm break-all mt-9  ' >Included in this phase</h1>
-              <div className='flex gap-5 mt-5 flex-col grid grid-cols-3'>
+              <div className=' gap-5 mt-5 flex-col grid grid-cols-3'>
                 <Button className="py-5 rounded-full text-sm  shadow-xl" >
                   In-depth
                 </Button>
@@ -147,7 +149,7 @@ export default function Home() {
               </p>
 
               <h1 className=' font-sans font-bold text-2sm break-all mt-9  ' >Included in this phase</h1>
-              <div className='flex gap-5 mt-5 flex-col grid grid-cols-3'>
+              <div className=' gap-5 mt-5 flex-col grid grid-cols-3'>
                 <Button className="py-5 rounded-full text-sm  shadow-xl" >
                   In-depth
                 </Button>
@@ -184,7 +186,7 @@ export default function Home() {
               </p>
 
               <h1 className=' font-sans font-bold text-2sm break-all mt-9  ' >Included in this phase</h1>
-              <div className='flex gap-5 mt-5 flex-col grid grid-cols-3'>
+              <div className='gap-5 mt-5 flex-col grid grid-cols-3'>
                 <Button className="py-5 rounded-full text-sm  shadow-xl" >
                   In-depth
                 </Button>
@@ -215,27 +217,51 @@ export default function Home() {
           
           <p className='mt-10 text-gray-600 text-xl ml-80 font-light'>We strive to stay at the forefront of emerging trends and technologies,<br/> while completely ignoring them and forking that old Rails project we feel comfortable using.<br/> We stand by our core values to justify that decision.</p>
           <TextInfoSessãoPrice/>
+
+          {/*sessão Card Tell us about your project*/}
           <CardContato/>
           
         </section>
 
-        <section id="Sessão de linkd para entrar em contato " className=" bg-gray-50 w-full h-full grid grid-cols-2" >
-          <div className='flex gap-36'>
-            <div className='flex flex-col'> <h1>hahhah</h1>
-            
-              <a>Company</a>
-              </div>
+        
 
-            <div>contato</div>
+        <footer id="Sessãofooter " className=" flex flex-col bg-gray-50 w-full h-full  ">
+        <section id="Sessão de linkd para entrar em contato " className=" bg-gray-50 w-full h-full grid grid-cols-2 gap-96" >
+          <div className='flex gap-36 justify-center ml-60'>
+            <div className='flex flex-col '> <h1 className=' font-sans font-medium text-lg break-all mt-44 mb-3 ' >Company</h1>
+            
+            <Link href="/Contact" className='text-sm font-light text-gray-700 '> Contact us → </Link>
+              </div>
+              
+              <div className='flex flex-col'> <h1 className=' font-sans font-medium text-lg break-all mt-44  mb-3' >Connect</h1>
+            
+            <Link href="/" className='text-sm font-light text-gray-700 mb-2 ' >Linkedin</Link>
+            <Link href="/" className='text-sm font-light text-gray-700 mb-2'>GitHub</Link>
+            <Link  href="/" className='text-sm font-light text-gray-700  '>Instagram</Link>
+            </div>
+
+            
           </div>
-          <div className=' '>email</div>
+          <div className='flex flex-col'> <h1 className=' font-sans font-medium text-lg break-all mt-44 ' >Sign up for our newsletter</h1>
+            
+            <a className=' font-light text-gray-700 text-sm mt-5 mb-4' >Subscribe to get the latest design news, articles, <br/> resources and inspiration.</a>
+
+            <div className="flex w-full max-w-sm items-center space-x-2">
+      <Input type="email" placeholder="Email" className='py-6  rounded-lg' />
+      <Button type="submit">Subscribe</Button>
+    </div>
+
+            </div>
        
         </section >
 
-        <footer id="Sessãofooter " className=" flex flex-row bg-gray-50 w-full h-full grid grid-cols-2">
-          <div className=' flex justify-around
-mt-7 mb-9'><h1 className='text-5xl  text-gray-950 font-bold'>DevRemote</h1>
-<p className=' text-sm font-light text-gray-500  '>© Studio Agency Inc. 2023</p></div>
+        <h1 className=' flex justify-around text-gray-200 mt-36  mb-36'>______________________________________________________________________________________________________</h1>
+
+          <div className=' flex justify-around 
+ mb-9'>
+  
+  <h1 className='text-4xl  text-gray-950 font-bold'>DevRemote</h1>
+<p className=' text-sm font-light text-gray-500 mt-6  '>© Studio Agency Inc. 2023</p></div>
 
         </footer>
 
