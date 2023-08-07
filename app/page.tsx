@@ -14,28 +14,30 @@ import Link from 'next/link';
 export default function Home() {
 
   return (
-    <main>
+    <>
+    
       <body className="bg-black">
-        <header
+
+      <header
           id="header"
           className="flex items-end rounded-t-[40px] mt-2 bg-white w-full  "
         >
           <div className="flex w-full justify-around mt-16">
-          <Link href="/Home"  className='font-bold text-3xl'> DevRemote</Link>
+          <Link href="/Home"  className='font-bold text-3xl  '> DevRemote</Link>
          
-            <div className="flex gap-6">
+            <div className="flex gap-6 ">
               <Button
 
-                className="py-5 rounded-full text-sm  shadow-xl"
+                className="py-5 rounded-full text-sm  shadow-xl transition ease-in-out delay-150 bg-gray-950 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100  hover:shadow-gray-800/50 duration-300"
               >
-             <Link href="/Contact" className='text-sm font-bold text-white '> Contact us</Link>
+             <Link href="/Contact" className='text-sm font-bold text-white hover:text-gray-950 duration-300 '> Contact us</Link>
               </Button>
               <Sheet>
 
                 <SheetTrigger> <DragHandleIcon /></SheetTrigger>
                 <SheetContent side="top" className="w-full sm:w-full">
                   <SheetHeader>
-                    <SheetTitle>Are you sure absolutely sure?</SheetTitle>
+                    <SheetTitle>Are you sure absolutely sure?</SheetTitle>h
                     <SheetDescription>
                       This action cannot be undone. This will permanently delete your account
                       and remove your data from our servers.
@@ -46,9 +48,10 @@ export default function Home() {
             </div>
           </div>
         </header>
+      
         <main id="inicioPage" className=" bg-white w-full h-[2300px] ">
           <section className=' flex flex-col h-[700px]'>
-            <h1 className=' font-sans font-medium text-7xl break-all mt-44 ml-80'>
+            <h1 className='scroll-m-2 font-sans font-medium text-7xl break-all mt-44 ml-80  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300'>
               We are one
               technology <br /> company
             </h1>
@@ -268,6 +271,6 @@ export default function Home() {
 
       </body>
 
-    </main>
+    </>
   )
 }
