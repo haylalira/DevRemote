@@ -28,9 +28,9 @@ export default function Home() {
             <div className="flex gap-6 ">
               <Button
 
-                className="py-5 rounded-full text-sm  shadow-xl transition ease-in-out delay-150 bg-gray-950 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100  hover:shadow-gray-800/50 duration-300"
+                className="py-5 rounded-full text-sm  shadow-xl transition ease-in-out delay-150 bg-gray-950 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900  hover:shadow-gray-800/50 duration-300"
               >
-             <Link href="/Contact" className='text-sm font-bold text-white hover:text-gray-950 duration-300 '> Contact us</Link>
+             <Link href="/Contact" className='text-sm font-bold text-white  '> Contact us</Link>
               </Button>
               <Sheet>
 
