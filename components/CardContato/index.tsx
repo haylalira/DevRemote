@@ -4,7 +4,7 @@ import { Button } from "../ui/button"
 
 export const CardContato =()=>{
     return(
-        <>
+      
         <div className="flex justify-center">
 
        
@@ -15,22 +15,26 @@ export const CardContato =()=>{
                 <h1 className=' flex justify-around text-zinc-800 mr-96 mt-36 '>____________________________________________________________________________</h1>
                
                <div className="mt-16 grid  grid-cols-2">
-                <div><h1 className="text-white font-normal text-xl  mt-9 mb-7 ">Our offices</h1>
+
+                <div> 
+            <h1 className="text-white font-normal text-xl  mt-9 mb-7 ">Our offices</h1>
               <h1 className="text-white font-bold text-sm mb-2">Copenhagen</h1>
               <p  className="text-white font-light text-sm mb-2" >1 Carlsberg Gate</p>
               <p  className="text-white font-light text-sm mb-2" >1260, København, Denmark</p>
               </div> 
+
               <div className="mt-24"> 
                  <h1 className="text-white font-bold text-sm mb-2">Billund</h1>
               <p  className="text-white font-light text-sm mb-2" >24 Lego Allé</p>
-              <p  className="text-white font-light text-sm mb-2" >7190, Billund, Denmark</p>/div>
+              <p  className="text-white font-light text-sm mb-2" >7190, Billund, Denmark</p>
                </div>
+
                </div>
                
             </CardHeader>
         
         </Card>
         </div>
-        </>
+      
     )
 }

@@ -3,7 +3,7 @@ import { Card } from "../ui/card"
 
 export const TextInfoSessãoPrice = () =>{
     return(
-        <>
+   
         <div className="ml-80  mt-8 mb-28 flex ">
             <div className=" flex  gap-3 grid grid-cols-3 " >
             <Card className="w-96  p-8">
@@ -34,6 +34,6 @@ export const TextInfoSessãoPrice = () =>{
              </Card>
              </div>
         </div>
-        </>
+       
     )
 }
