@@ -1,15 +1,24 @@
+"use client"
+
 import { Card } from "@mui/material"
 import { CardHeader } from "../ui/card"
 import { Button } from "../ui/button"
+import { useEffect } from "react"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export const CardContato =()=>{
+    useEffect(()=>{
+        AOS.init({duration:2000})
+    },[])
     return(
       
         <div className="flex justify-center">
 
        
-        <Card className="w-[1200px] h-[500px] bg-black rounded-3xl  " >
-            <CardHeader className="ml-44 ">
+        <Card className="w-[1200px] h-[500px] bg-black rounded-3xl" data-aos="fade-up" >
+            <CardHeader className="ml-44 " data-aos="fade-up">
                 <h1 className="text-white font-normal text-4xl  mb-5 mt-28">Tell us about your project</h1>
                 <Button className="  w-28 py-5 bg-slate-50 text-black rounded-3xl font-bold ">Say Hei</Button>
                 <h1 className=' flex justify-around text-zinc-800 mr-96 mt-36 '>____________________________________________________________________________</h1>

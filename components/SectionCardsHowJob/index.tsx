@@ -5,22 +5,29 @@ import Image from 'next/image'
 import SetupImage from '../../public/setup2.png'
 import SetupImageDark from '../../public/setup.png'
 import SetupImageLight from '../../public/SetupImageLight.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 
 export function CardInfoHowJob(){
+   useEffect(()=>{
+    AOS.init({duration:2000})
+   },[])
     return(
         <>
            {/* //01 card*/}
-           <div className='flex flex-row justify-center gap-20 mt-44'>
+           <div className='flex flex-row justify-center gap-20 mt-44'  data-aos="fade-up">
             
            
               <Image  src={SetupImage}
       alt="My Image"
       width={600}
       height={700}
-      className='rounded-md'
+      className='rounded-md' 
+      data-aos="fade-up"
     />
            
-            <div className='w-[560px]'>
+            <div className='w-[560px]'  >
               <h1 className=' font-sans font-bold text-xl break-all mt-9  '>
                 / 01
               </h1>
@@ -52,7 +59,7 @@ export function CardInfoHowJob(){
           </div>
 
           {/* //02 card*/}
-          <div className='flex flex-row justify-center gap-20 mt-44'>
+          <div className='flex flex-row justify-center gap-20 mt-44'  data-aos="fade-up">
             <div className='w-[560px]'>
               <h1 className=' font-sans font-bold text-xl break-all mt-9  '>
                 / 02
@@ -90,7 +97,7 @@ export function CardInfoHowJob(){
     />
           </div>
           {/* //03 card */}
-          <div className='flex flex-row justify-center gap-20 mt-44 mb-48' >
+          <div className='flex flex-row justify-center gap-20 mt-44 mb-48'  data-aos="fade-up">
           <Image  src={SetupImageLight}
       alt="My Image"
       width={600}
