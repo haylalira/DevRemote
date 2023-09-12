@@ -1,28 +1,18 @@
 
 
- "use client"
-
 import { Button } from '@/components/ui/button'
 import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 
 
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-import Image from "next/image"
 import Link from 'next/link';
 import { Label } from '@/components/ui/label';
-import { useEffect } from 'react';
 import { DialogUp } from '@/components/DialogUp';
 
 export default function Contact() {
-  useEffect(( )=>{
-    AOS.init({duration:2000})
-  },[])
+ 
     return (
 
         <div className="bg-black">
@@ -45,17 +35,17 @@ export default function Contact() {
   </header>
 
   <section id="Sessão como Trabalhamos" className="flex flex-col bg-white w-full h-full">
-    <p className="font-sans font-medium text-xl break-all mt-44 ml-96" data-aos="fade-up">
+    <p className="font-sans font-medium text-xl break-all mt-44 ml-96" >
       Contact us
     </p>
-    <h1 className="font-sans font-medium text-5xl break-all mt-9 ml-96" data-aos="fade-up">
+    <h1 className="font-sans font-medium text-5xl break-all mt-9 ml-96" >
       Let’s work together
     </h1>
-    <p className="mt-10 text-gray-600 text-xl ml-96 font-light" data-aos="fade-up">
+    <p className="mt-10 text-gray-600 text-xl ml-96 font-light" >
       We can’t wait to hear from you.
     </p>
 
-    <section className="grid grid-cols-2 gap-16" data-aos="fade-up">
+    <section className="grid grid-cols-2 gap-16" >
       <div id="infoContact">
         <p className="font-sans font-medium text-xl break-all mt-36 ml-96">
           Our offices
@@ -78,6 +68,7 @@ export default function Contact() {
               1260, København, Denmark
             </p>
           </div>
+          
           <div className="flex-col">
             <h1 className="font-sans font-bold text-sm break-all mt-8">
               Billund
@@ -89,6 +80,7 @@ export default function Contact() {
               7190, Billund, Denmark
             </p>
           </div>
+
         </div>
 
         <p className="mt-10 text-gray-200 text-xl ml-96 font-light">
@@ -174,7 +166,7 @@ export default function Contact() {
   </section>
 
   <footer id="Sessãofooter" className="flex flex-col bg-white w-full h-full">
-    <section id="Sessão de linkd para entrar em contato" className="bg-white w-full h-full grid grid-cols-2 gap-96" data-aos="fade-up">
+    <section id="Sessão de linkd para entrar em contato" className="bg-white w-full h-full grid grid-cols-2 gap-96" >
       <div className="flex gap-36 justify-center ml-60">
         <div className="flex flex-col">
           <h1 className="font-sans font-medium text-lg break-all mt-44 mb-3">Company</h1>

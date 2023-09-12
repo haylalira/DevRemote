@@ -1,14 +1,12 @@
 
 
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Card, CardContent, } from '@/components/ui/card';
 
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import DragHandleIcon from '@mui/icons-material/DragHandle';
 import CloseIcon from '@mui/icons-material/Close';
-import { Button } from '@/components/ui/button'
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 import Link from 'next/link'
 
 import IconButton from '@mui/material/IconButton';
