@@ -20,7 +20,7 @@ export const CardContato =()=>{
         <Card className="w-[1200px] h-[500px] bg-black rounded-3xl" data-aos="fade-up" >
             <CardHeader className="ml-44 " data-aos="fade-up">
                 <h1 className="text-white font-normal text-4xl  mb-5 mt-28">Tell us about your project</h1>
-                <Button className="  w-28 py-5 bg-slate-50 text-black rounded-3xl font-bold ">Say Hei</Button>
+                <Button className="  w-28 py-5 bg-slate-50 text-black rounded-3xl font-bold hover:bg-slate-200 ">Say Hei</Button>
                 <h1 className=' flex justify-around text-zinc-800 mr-96 mt-36 '>____________________________________________________________________________</h1>
                
                <div className="mt-16 grid  grid-cols-2">

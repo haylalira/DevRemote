@@ -1,19 +1,28 @@
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
+
+ "use client"
+
 import { Button } from '@/components/ui/button'
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import DragHandleIcon from '@mui/icons-material/DragHandle';
+
+
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import CloseIcon from '@mui/icons-material/Close';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Image from "next/image"
 import Link from 'next/link';
 import { Label } from '@/components/ui/label';
+import { useEffect } from 'react';
+import { DialogUp } from '@/components/DialogUp';
 
 export default function Contact() {
-
+  useEffect(( )=>{
+    AOS.init({duration:2000})
+  },[])
     return (
 
         <div className="bg-black">
@@ -26,69 +35,27 @@ export default function Contact() {
         DevRemote
       </Link>
 
-      <div className="flex gap-6">
+      <div className="flex gap-6 ">
         <Button className="py-5 rounded-full text-sm shadow-xl">
           Contact us
         </Button>
-        <Sheet>
-          <SheetTrigger>
-            <DragHandleIcon />
-          </SheetTrigger>
-          <SheetContent side="top" className="w-full sm:w-full bg-black h-4/6">
-            <SheetHeader>
-              <SheetTitle className="flex justify-around mt-4 mb-12">
-                <Link href="/" className="font-bold text-3xl text-gray-50">
-                  DevRemote
-                </Link>
-                <Button
-                  className="py-5 w-12 rounded-full text-sm font-bold bg-white hover:bg-slate-200 text-slate-950 shadow-xl"
-                >
-                  X
-                </Button>
-              </SheetTitle>
-              <div className="flex">
-                <Card className="bg-black border-gray-600 w-6/12 h-28 text-gray-50 rounded-none">
-                  <CardContent className="font-bold text-center mt-12 text-4xl">
-                    HOME
-                  </CardContent>
-                </Card>
-                <Card className="bg-black border-gray-600 w-6/12 h-28 text-gray-50 rounded-none">
-                  <CardContent className="font-bold text-center mt-12 text-4xl">
-                    Our Process
-                  </CardContent>
-                </Card>
-              </div>
-              <div className="flex">
-                <Card className="bg-black border-gray-600 w-6/12 h-28 text-gray-50 rounded-none">
-                  <CardContent className="font-bold text-center mt-12 text-4xl">
-                    HOME
-                  </CardContent>
-                </Card>
-                <Card className="bg-black border-gray-600 w-6/12 h-28 text-gray-50 rounded-none">
-                  <CardContent className="font-bold text-center mt-12 text-4xl">
-                    Our Process
-                  </CardContent>
-                </Card>
-              </div>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
+      <DialogUp />
       </div>
     </div>
   </header>
 
   <section id="Sessão como Trabalhamos" className="flex flex-col bg-white w-full h-full">
-    <p className="font-sans font-medium text-xl break-all mt-44 ml-96">
+    <p className="font-sans font-medium text-xl break-all mt-44 ml-96" data-aos="fade-up">
       Contact us
     </p>
-    <h1 className="font-sans font-medium text-5xl break-all mt-9 ml-96">
+    <h1 className="font-sans font-medium text-5xl break-all mt-9 ml-96" data-aos="fade-up">
       Let’s work together
     </h1>
-    <p className="mt-10 text-gray-600 text-xl ml-96 font-light">
+    <p className="mt-10 text-gray-600 text-xl ml-96 font-light" data-aos="fade-up">
       We can’t wait to hear from you.
     </p>
 
-    <section className="grid grid-cols-2 gap-16">
+    <section className="grid grid-cols-2 gap-16" data-aos="fade-up">
       <div id="infoContact">
         <p className="font-sans font-medium text-xl break-all mt-36 ml-96">
           Our offices
@@ -141,13 +108,16 @@ export default function Contact() {
               careers@studioagency.com
             </p>
           </div>
+          
           <div className="flex-col">
             <h1 className="font-sans font-bold text-sm break-all mt-8">Press</h1>
 
             <p className="font-sans font-normal text-sm break-all mt-3 text-slate-600">
               press@studioagency.com
             </p>
+
           </div>
+
         </div>
 
         <p className="mt-10 text-gray-200 text-xl ml-96 font-light">
@@ -204,7 +174,7 @@ export default function Contact() {
   </section>
 
   <footer id="Sessãofooter" className="flex flex-col bg-white w-full h-full">
-    <section id="Sessão de linkd para entrar em contato" className="bg-white w-full h-full grid grid-cols-2 gap-96">
+    <section id="Sessão de linkd para entrar em contato" className="bg-white w-full h-full grid grid-cols-2 gap-96" data-aos="fade-up">
       <div className="flex gap-36 justify-center ml-60">
         <div className="flex flex-col">
           <h1 className="font-sans font-medium text-lg break-all mt-44 mb-3">Company</h1>
