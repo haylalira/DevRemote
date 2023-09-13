@@ -1,5 +1,5 @@
 
-
+"use client"
 import { Card, CardContent, } from '@/components/ui/card';
 
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
