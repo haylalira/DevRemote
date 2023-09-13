@@ -1,21 +1,31 @@
 
-
+"use client"
 import { Button } from '@/components/ui/button'
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 
-
+import axios from 'axios';
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Link from 'next/link';
 import { Label } from '@/components/ui/label';
 import { DialogUp } from '@/components/DialogUp';
+import { useForm } from 'react-hook-form';
 
 export default function Contact() {
  
+
+const { register, handleSubmit } = useForm();
+
+
+  async function onSumitDataContact(data: any) {
+    const { data: response } = await axios.post('/api/email',data);
+  }
+
+ 
     return (
 
-        <div className="bg-black">
+        <div className="bg-black"> 
   <header
     id="header"
     className="flex items-end rounded-t-[40px] mt-2 bg-white w-full"
@@ -45,103 +55,28 @@ export default function Contact() {
       We can’t wait to hear from you.
     </p>
 
-    <section className="grid grid-cols-2 gap-16" >
-      <div id="infoContact">
-        <p className="font-sans font-medium text-xl break-all mt-36 ml-96">
-          Our offices
-        </p>
-
-        <p className="text-gray-600 text-base mt-6 ml-96 font-light">
-          Prefer doing things in person? We don’t but we have to list our
-          addresses here for legal reasons.
-        </p>
-
-        <div className="grid grid-cols-2 ml-96 mt-6">
-          <div className="flex-col">
-            <h1 className="font-sans font-bold text-sm break-all mt-8">
-              Copenhagen
-            </h1>
-            <p className="font-sans font-normal text-sm break-all mt-3 text-slate-600">
-              1 Carlsberg Gate
-            </p>
-            <p className="font-sans font-normal text-sm break-all mt-3 text-slate-600">
-              1260, København, Denmark
-            </p>
-          </div>
-          
-          <div className="flex-col">
-            <h1 className="font-sans font-bold text-sm break-all mt-8">
-              Billund
-            </h1>
-            <p className="font-sans font-normal text-sm break-all mt-3 text-slate-600">
-              24 Lego Allé
-            </p>
-            <p className="font-sans font-normal text-sm break-all mt-3 text-slate-600">
-              7190, Billund, Denmark
-            </p>
-          </div>
-
-        </div>
-
-        <p className="mt-10 text-gray-200 text-xl ml-96 font-light">
-          __________________________________________________
-        </p>
-        <h1 className="mt-10 text-gray-800 text-xl ml-96 font-bold">
-          Email us
-        </h1>
-
-        <div className="grid grid-cols-2 ml-96 mt-6">
-          <div className="flex-col">
-            <h1 className="font-sans font-bold text-sm break-all mt-8">
-              Careers
-            </h1>
-
-            <p className="font-sans font-normal text-sm break-all mt-3 text-slate-600">
-              careers@studioagency.com
-            </p>
-          </div>
-          
-          <div className="flex-col">
-            <h1 className="font-sans font-bold text-sm break-all mt-8">Press</h1>
-
-            <p className="font-sans font-normal text-sm break-all mt-3 text-slate-600">
-              press@studioagency.com
-            </p>
-
-          </div>
-
-        </div>
-
-        <p className="mt-10 text-gray-200 text-xl ml-96 font-light">
-          ___________________________________________________
-        </p>
-        <h1 className="mt-10 text-gray-800 text-xl ml-96 font-bold">
-          Follow us
-        </h1>
-        <div className="flex gap-2 ml-96">
-          <h1>Facebook</h1>
-          <h1>Instagram</h1>
-          <h1>GitHub</h1>
-          <h1>Linkedin</h1>
-        </div>
-      </div>
-
-      <div className="flex flex-col mt-36">
+    <section className="flex flex-col mt-16 ml-96 ">
+     
+     
         <h1 className="font-sans font-medium text-xl break-all mb-8">
           Work inquiries
         </h1>
-        <Textarea className="h-24 w-8/12 rounded-tl-3xl rounded-b-none text-lg" placeholder="Name" />
-        <Textarea className="h-24 w-8/12 rounded-none text-lg " placeholder="Email" />
-        <Textarea className="h-24 w-8/12 rounded-none text-lg" placeholder="Company" />
-        <Textarea className="h-24 w-8/12 rounded-none text-lg" placeholder="Phone" />
-        <Textarea className="h-24 w-8/12 rounded-none text-lg" placeholder="Message" />
-        <Card className="h-56 w-8/12 rounded-none text-lg flex">
+        <div>
+          <form onSubmit={handleSubmit(onSumitDataContact)} >
+        <Textarea className="h-24 w-7/12 rounded-tl-3xl rounded-b-none text-lg" placeholder="Name" {...register('name')} />
+        <Textarea className="h-24 w-7/12 rounded-none text-lg " placeholder="Email"  {...register('email')} />
+        <Textarea className="h-24 w-7/12 rounded-none text-lg" placeholder="Company"{...register('company')} />
+        <Textarea className="h-24 w-7/12 rounded-none text-lg" placeholder="Message"  {...register('message')}/>
+
+        <Card className="h-56 w-7/12 rounded-none text-lg flex">
+
           <h1 className="ml-4 font-sans font-medium text-xl break-all mb-8 text-gray-400 mt-5">
             Budget
           </h1>
-          <RadioGroup defaultValue="comfortable" className="grid grid-cols-2 m-5 mt-8">
+
+          <RadioGroup defaultValue="comfortable" className="grid grid-cols-2 m-5 mt-8"   {...register('groupPrice')}>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="default" id="r1" />
+              <RadioGroupItem value="default" id="r1"/>
               <Label htmlFor="r1">$25K – $50K</Label>
             </div>
             <div className="flex items-center space-x-2">
@@ -157,10 +92,12 @@ export default function Contact() {
               <Label htmlFor="r4">More than $150K</Label>
             </div>
           </RadioGroup>
+
         </Card>
-        <Button className="mt-12 h- w-3/12 mb-22 rounded-2xl">
+        <Button type='submit' className="mt-12 h- w-3/12 mb-22 rounded-2xl">
           Let’s work together
         </Button>
+        </form>
       </div>
     </section>
   </section>
@@ -210,3 +147,5 @@ export default function Contact() {
 </div>
     )
 }
+
+
