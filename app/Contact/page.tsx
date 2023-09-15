@@ -10,18 +10,38 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Link from 'next/link';
 import { Label } from '@/components/ui/label';
 import { DialogUp } from '@/components/DialogUp';
-import { useForm } from 'react-hook-form';
+import { useForm , useFieldArray, Controller } from 'react-hook-form';
+import {z} from 'zod';
+import {  zodResolver } from '@hookform/resolvers/zod';
+
+const createUserFormSchema = z.object({
+  name: z.string().nonempty('nome é obrigatório').transform(name => {return name.trim().split(' ').map(word => { return word[0].toLocaleUpperCase().concat(word.substring(1))}).join('')}),
+  email: z.string().nonempty('O e-mail é obrigatório').email('formato de email invalido').toLowerCase(),
+  company: z.string().nonempty('identifique a impresa'),
+  message: z.string().nonempty('não podemos enviar uma mensagem vazia'),
+  
+
+})
+
+
+type CreateUseFormData = z.infer<typeof createUserFormSchema>
 
 export default function Contact() {
- 
-
-const { register, handleSubmit } = useForm();
+const { register, handleSubmit, formState:{errors},reset } = useForm<CreateUseFormData>({resolver:zodResolver(createUserFormSchema)});
 
 
-  async function onSumitDataContact(data: any) {
-    const { data: response } = await axios.post('/api/email',data);
+
+
+async function onSumitDataContact(data: any) {
+  try {
+    const response = await axios.post('/api/email', data);
+    if (response.status === 200) {
+      reset();
+    }
+  } catch (error) {
+ console.log("não enviou")
   }
-
+}
  
     return (
 
@@ -55,7 +75,7 @@ const { register, handleSubmit } = useForm();
       We can’t wait to hear from you.
     </p>
 
-    <section className="flex flex-col mt-16 ml-96 ">
+    <section className="flex-col mt-16 ml-96 ">
      
      
         <h1 className="font-sans font-medium text-xl break-all mb-8">
@@ -63,37 +83,47 @@ const { register, handleSubmit } = useForm();
         </h1>
         <div>
           <form onSubmit={handleSubmit(onSumitDataContact)} >
-        <Textarea className="h-24 w-7/12 rounded-tl-3xl rounded-b-none text-lg" placeholder="Name" {...register('name')} />
+        <Textarea className="h-24 w-7/12 rounded-tl-3xl rounded-b-none text-lg" placeholder="name" {...register('name')} />
+        {errors.name &&  <span>{errors.name.message}</span>}
         <Textarea className="h-24 w-7/12 rounded-none text-lg " placeholder="Email"  {...register('email')} />
+        {errors.email && <span>{errors.email.message}</span>}
         <Textarea className="h-24 w-7/12 rounded-none text-lg" placeholder="Company"{...register('company')} />
+        {errors.company && <span>{errors.company.message}</span>}
         <Textarea className="h-24 w-7/12 rounded-none text-lg" placeholder="Message"  {...register('message')}/>
+        {errors.message && <span>{errors.message.message}</span>} 
 
         <Card className="h-56 w-7/12 rounded-none text-lg flex">
 
           <h1 className="ml-4 font-sans font-medium text-xl break-all mb-8 text-gray-400 mt-5">
             Budget
           </h1>
+        
+          <RadioGroup defaultValue="comfortable" className="grid grid-cols-2 m-5 mt-8"   >
 
-          <RadioGroup defaultValue="comfortable" className="grid grid-cols-2 m-5 mt-8"   {...register('groupPrice')}>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="default" id="r1"/>
               <Label htmlFor="r1">$25K – $50K</Label>
             </div>
+
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="comfortable" id="r2" />
               <Label htmlFor="r2">$50K – $100K</Label>
             </div>
+
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="compact" id="r3" />
               <Label htmlFor="r3">$100K – $150K</Label>
             </div>
+
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="more" id="r4" />
               <Label htmlFor="r4">More than $150K</Label>
             </div>
+           
           </RadioGroup>
-
+       {/*{errors.price && <span>{errors.price.message}</span>}*/}  
         </Card>
+        
         <Button type='submit' className="mt-12 h- w-3/12 mb-22 rounded-2xl">
           Let’s work together
         </Button>
