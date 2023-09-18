@@ -34,7 +34,7 @@ const { register, handleSubmit, formState:{errors}, reset } = useForm<CreateUseF
 
 
 
-async function onSumitDataContact(data: any) {
+async function onSumibtDataContact(data: any) {
   try {
     const response = await axios.post('/api/email', data);
     if (response.status === 200) {
@@ -84,7 +84,7 @@ async function onSumitDataContact(data: any) {
           Work inquiries
         </h1>
         <div>
-          <form onSubmit={handleSubmit(onSumitDataContact)} >
+          <form onSubmit={handleSubmit(onSumibtDataContact)} >
         <Textarea className="h-24 w-7/12 rounded-tl-3xl rounded-b-none text-lg" placeholder="name" {...register('name')} />
         {errors.name &&  <span>{errors.name.message}</span>}
         <Textarea className="h-24 w-7/12 rounded-none text-lg " placeholder="Email"  {...register('email')} />
@@ -126,7 +126,7 @@ async function onSumitDataContact(data: any) {
        {/*{errors.price && <span>{errors.price.message}</span>}*/}  
         </Card>
         
-        <Button type='submit' className="mt-12 h- w-3/12 mb-22 rounded-2xl">
+        <Button type='submit' className="mt-12 h-12 w-60 mb-12 rounded-2xl">
           Let’s work together
         </Button>
         </form>

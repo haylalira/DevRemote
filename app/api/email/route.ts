@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { Resend } from 'resend';
 
 
-const resend = new Resend("re_jMYz9X5t_BuCyYXWpvKBy79h3gHvUyLM4");
+const resend = new Resend("re_iWsbJaJC_HdqPG7wDEAUwPbtmmdSpfAqQ");
 
 export async function POST(request: Request) {
   const body = await request.json()
