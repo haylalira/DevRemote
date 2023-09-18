@@ -40,7 +40,7 @@ export default function Home() {
               We are one
               technology <br /> company
             </h1>
-            <h1 className='mt-10 text-gray-600 text-2xl ml-80 font-normal'>"Welcome to devRemote, your gateway to cutting-edge technology solutions! <br /> We specialize in delivering exceptional web and mobile projects, transforming your <br />  ideas into reality with innovation and expertise."</h1>
+            <h1 className='mt-10 text-gray-600 text-2xl ml-80 font-normal'>Welcome to devRemote, your gateway to cutting-edge technology solutions! <br /> We specialize in delivering exceptional web and mobile projects, transforming your <br />  ideas into reality with innovation and expertise.</h1>
           </section>
 
           <SectionCardBlack /> 
@@ -49,7 +49,7 @@ export default function Home() {
           <h1 className=' font-sans font-medium text-5xl break-all mt-32 ml-80 text-gray-800' >
             Harnessing technology for <br /> a brighter future
           </h1>
-          <p className='mt-10 text-gray-600 text-xl ml-80 font-normal' >" We specialize in delivering exceptional web and mobile projects, <br />  transforming your ideas into reality with innovatioand expertise."</p>
+          <p className='mt-10 text-gray-600 text-xl ml-80 font-normal' > We specialize in delivering exceptional web and mobile projects, <br />  transforming your ideas into reality with innovatioand expertise.</p>
           <CardSectionHarnessing />
           <p className=' font-sans font-medium text-2xl break-all mt-44 ml-80'  >Other projects</p>
           <h1 className=' font-sans font-medium text-5xl break-all mt-10 ml-80' >

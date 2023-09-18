@@ -1,5 +1,6 @@
 
-"use client"
+'use client'
+
 import { Button } from '@/components/ui/button'
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from '@/components/ui/card';
@@ -10,7 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Link from 'next/link';
 import { Label } from '@/components/ui/label';
 import { DialogUp } from '@/components/DialogUp';
-import { useForm , useFieldArray, Controller } from 'react-hook-form';
+import { useForm ,  } from 'react-hook-form';
 import {z} from 'zod';
 import {  zodResolver } from '@hookform/resolvers/zod';
 
@@ -19,6 +20,7 @@ const createUserFormSchema = z.object({
   email: z.string().nonempty('O e-mail é obrigatório').email('formato de email invalido').toLowerCase(),
   company: z.string().nonempty('identifique a impresa'),
   message: z.string().nonempty('não podemos enviar uma mensagem vazia'),
+  price: z.array(z.object({ value:z.string(),}))
   
 
 })
@@ -27,7 +29,7 @@ const createUserFormSchema = z.object({
 type CreateUseFormData = z.infer<typeof createUserFormSchema>
 
 export default function Contact() {
-const { register, handleSubmit, formState:{errors},reset } = useForm<CreateUseFormData>({resolver:zodResolver(createUserFormSchema)});
+const { register, handleSubmit, formState:{errors}, reset } = useForm<CreateUseFormData>({resolver:zodResolver(createUserFormSchema)});
 
 
 
@@ -45,7 +47,7 @@ async function onSumitDataContact(data: any) {
  
     return (
 
-        <div className="bg-black"> 
+   <div className="bg-black"> 
   <header
     id="header"
     className="flex items-end rounded-t-[40px] mt-2 bg-white w-full"
@@ -98,7 +100,7 @@ async function onSumitDataContact(data: any) {
             Budget
           </h1>
         
-          <RadioGroup defaultValue="comfortable" className="grid grid-cols-2 m-5 mt-8"   >
+          <RadioGroup defaultValue="comfortable" className="grid grid-cols-2 m-5 mt-8"  >
 
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="default" id="r1"/>
