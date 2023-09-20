@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { Label } from '@/components/ui/label';
 import { DialogUp } from '@/components/DialogUp';
 import { useForm, Controller } from 'react-hook-form';
-import { z } from 'zod';
+import { string, z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 
@@ -27,9 +27,9 @@ const createUserFormSchema = z.object({
 type CreateUseFormData = z.infer<typeof createUserFormSchema>
 
 export default function Contact() {
-  const { register, handleSubmit, formState: { errors }, reset, control, setValue } = useForm<CreateUseFormData>({ resolver: zodResolver(createUserFormSchema) });
+  const { register, handleSubmit, formState: { errors }, reset, control, } = useForm<CreateUseFormData>({ resolver: zodResolver(createUserFormSchema) });
   console.log(errors)
-  const [selectedValue, setSelectedValue] = useState("default");
+  
 
   function onSumibtForm(data: CreateUseFormData) {
     console.log('entrou formSumibt')
@@ -42,9 +42,7 @@ export default function Contact() {
     })
   }
 
-  const handleRadioChange = (value: string) => {
-    setSelectedValue(value);
-  };
+
 
 
   return (
@@ -102,30 +100,32 @@ export default function Contact() {
                 <h1 className="ml-4 font-sans font-medium text-xl break-all mb-8 text-gray-400 mt-5">
                   Budget
                 </h1>
-
                 <Controller
-                  name="price"
-                  control={control}
-                  defaultValue="default" // Define o valor padrão
-                  render={() => (
-                    <RadioGroup
-                      className="grid grid-cols-2 m-5 mt-8"
-                     
-                    >
-                      <RadioGroupItem value="default" id="r1" />
-                      <label htmlFor="r1">$25K – $50K</label>
+        name="price"
+        control={control}
+        defaultValue="default" // Define o valor padrão
+        render={({ field }) => (
+          <RadioGroup
+            className="grid grid-cols-2 m-5 mt-8"
+            value={field.value}
+            onChange={(newValue) => field.onChange(newValue)}
+          >
+            <RadioGroupItem value="default" id="default" onClick={() => field.onChange("default")} />
+            <label htmlFor="r1">$25K – $50K</label>
 
-                      <RadioGroupItem value="comfortable" id="r2" />
-                      <label htmlFor="r2">$50K – $100K</label>
+            <RadioGroupItem value="comfortable" id="comfortable" onClick={() => field.onChange("comfortable")}/>
+            <label htmlFor="r2">$50K – $100K</label>
 
-                      <RadioGroupItem value="compact" id="r3" />
-                      <label htmlFor="r3">$100K – $150K</label>
+            <RadioGroupItem value="compact" id="compact" onClick={() => field.onChange("compact")} />
+            <label htmlFor="r3">$100K – $150K</label>
 
-                      <RadioGroupItem value="more" id="r4" />
-                      <label htmlFor="r4">More than $150K</label>
-                    </RadioGroup>
-                  )}
-                />
+            <RadioGroupItem value="more" id="more" onClick={() => field.onChange("more")}/>
+            <label htmlFor="r4">More than $150K</label>
+          </RadioGroup>
+        )}
+      />
+
+      
 
               </Card>
 

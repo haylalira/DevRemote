@@ -12,10 +12,14 @@ export async function POST(request: Request) {
       from: 'deyvison@easywriter-ai.com',
       to: ['haylalira1231@gmail.com' ,'deyvisonpenha1@gmail.com'],
       subject: 'collabs',
-    html: `<div> Olá eu me chamo:
+    html: `<div> <h1>Olá eu me chamo:<h1/>
             <strong>${body.name}</strong> </br>
-            <strong>${body.email}</strong> </br>
+            <p>Estou interessado em seus serviços!<p/>
             <p>${body.message} </p>
+            <p>o preço mais acessível para mim seria:<p/>
+            <p>${body.price} </p>
+            <p>Este é o meu email <p/>
+            <strong>${body.email}</strong> </br>
           
      </div>`,
     });
