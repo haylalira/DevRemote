@@ -112,16 +112,12 @@ export default function Home() {
             </div>
 
           </div>
-
-
         </section >
-
         <h1 className=' flex justify-around text-gray-200 mt-36  mb-36'>______________________________________________________________________________________________________</h1>
         <div className=' flex justify-around mb-9'>
           <h1 className='text-4xl  text-gray-950 font-bold'>DevRemote</h1>
           <p className=' text-sm font-light text-gray-500 mt-6  '> © Studio Agency Inc. 2023</p>
         </div>
-
       </footer>
 
     </div>
