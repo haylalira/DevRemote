@@ -30,29 +30,32 @@ export default function Home() {
       </header> 
 
     <main>
-        <section id="inicioPage" className="bg-white w-full h-[2900px]" >
-          <section className='flex flex-col h-[900px] my-custom-fade-in'  >
-            <h1 className='scroll-m-2 font-sans font-medium text-7xl break-all mt-80 ml-80'>
+    <section id="inicioPage" className="bg-white w-full h-[2900px] flex flex-col  " >
+          <section className='flex flex-col  h-[900px] my-custom-fade-in  mb-36 just  items-center'   >
+            <h1 className='font-sans font-medium  mt-80  text-6xl  sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl '>
               We are one
               technology <br /> company
             </h1>
-            <h1 className='mt-10 text-gray-600 text-2xl ml-80 font-normal'>Welcome to devRemote, your gateway to cutting-edge technology solutions! <br /> We specialize in delivering exceptional web and mobile projects, transforming your <br />  ideas into reality with innovation and expertise.</h1>
+            <h1 className='mt-10 text-gray-600 text-xl  sm:text-base md:text-lg lg:text-xl xl:text-2xl   font-normal'>Welcome to devRemote, your gateway to cutting-edge technology solutions! <br /> We specialize in delivering exceptional web and mobile projects, transforming your <br />  ideas into reality with innovation and expertise.</h1>
           </section>
-
+         
           <SectionCardBlack /> 
 
-
-          <h1 className=' font-sans font-medium text-5xl break-all mt-32 ml-80 text-gray-800' >
+           <div className='flex flex-col  items-center mt-32'>
+          <h1 className=' font-sans font-medium text-5xl  text-gray-800' >
             Harnessing technology for <br /> a brighter future
           </h1>
-          <p className='mt-10 text-gray-600 text-xl ml-80 font-normal' > We specialize in delivering exceptional web and mobile projects, <br />  transforming your ideas into reality with innovatioand expertise.</p>
-          <CardSectionHarnessing />
+          <p className='mt-10 text-gray-600 text-xl  font-normal  ' > We specialize in delivering exceptional web and mobile projects, <br />  transforming your ideas into reality with innovatioand expertise.</p>
+         </div> 
+         <CardSectionHarnessing />
           <p className=' font-sans font-medium text-2xl break-all mt-44 ml-80'  >Other projects</p>
           <h1 className=' font-sans font-medium text-5xl break-all mt-10 ml-80' >
             Developed
           </h1>
           <SectionBannerProjects />
+          
         </section>
+
 
 
 
