@@ -1,5 +1,3 @@
-"use client"
-
 import { CardContato } from '@/components/CardContato';
 import { CardInfoHowJob } from '@/components/SectionCardsHowJob';
 
@@ -8,14 +6,12 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 
-
 import { CardSectionHarnessing } from '@/components/CadSectionHarnessing ';
 import { DialogUp } from '@/components/DialogUp';
 import { SectionBannerProjects } from '@/components/SectionBannerProjects';
 import { SectionCardBlack } from '@/components/SectionCardBlack';
 
 export default function Home() {
-
   return (
     <div className="bg-black">
  
@@ -35,8 +31,8 @@ export default function Home() {
 
     <main>
         <section id="inicioPage" className="bg-white w-full h-[2900px]" >
-          <section className='flex flex-col h-[900px]'  >
-            <h1 className='scroll-m-2 font-sans font-medium text-7xl break-all mt-80 ml-80  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 '>
+          <section className='flex flex-col h-[900px] my-custom-fade-in'  >
+            <h1 className='scroll-m-2 font-sans font-medium text-7xl break-all mt-80 ml-80'>
               We are one
               technology <br /> company
             </h1>
