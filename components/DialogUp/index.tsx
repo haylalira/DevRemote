@@ -38,7 +38,7 @@ export function DialogUp() {
 
             <Card className="bg-white   border-gray-100 w-6/12 h-28 rounded-none  hover:bg-slate-100 flex justify-center items-center ">
               <CardContent >
-                <Link href="/" className="font-bold  text-4xl text-slate-950 ">
+                <Link href="/" className="font-bold flex justify-center text-4xl text-slate-950 ">
                   About Us
                 </Link>
               </CardContent>
@@ -53,22 +53,24 @@ export function DialogUp() {
             </Card>
           </div>
 
-          <div className="flex ">
-            <Card className="bg-zinc-900 border-gray-950 border-solid w-full h-28 text-gray-50 rounded-none flex justify-center items-center hover:bg-zinc-800 mb-12 ">
-              <CardContent >
-                <Link href="/" className="font-bold  text-4xl text-white ">
-                  Our Process
-                </Link>
-              </CardContent>
-            </Card>
-            <Card className="bg-white   border-gray-100 w-6/12 h-28 rounded-none  hover:bg-slate-100 flex justify-center items-center  ">
-              <CardContent >
-                <Link href="/" className="font-bold  text-4xl text-slate-950 ">
-                  Contact Us
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
+          <div className="flex">
+
+<Card className="bg-white   border-gray-100 w-6/12 h-28 rounded-none  hover:bg-slate-100 flex justify-center items-center ">
+  <CardContent >
+    <Link href="/" className="font-bold text-center  text-4xl text-slate-950 ">
+    Our Process
+    </Link>
+  </CardContent>
+</Card>
+
+<Card className="bg-zinc-900 border-gray-950 border-solid w-full h-28 text-gray-50 rounded-none flex justify-center items-center hover:bg-zinc-800" >
+  <CardContent >
+    <Link href="/Contact" className="font-bold  text-3xl text-white ">
+    Contact
+    </Link>
+  </CardContent>
+</Card>
+</div>
           <section className='flex-col '>
           <h1 className='text-white font-bold '>Follow Us </h1>
           <div className=' flex'>

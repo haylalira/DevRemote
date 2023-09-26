@@ -3,8 +3,8 @@ import { Card } from "../ui/card";
 
 export const TextInfoSessãoPrice = () => {
   return (
-    <div className="ml-80  mt-8 mb-28 flex flex-wrap overflow-y-auto  gap-3">
-      <Card className="w-96 h-[186px] p-8">
+    <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-16 flex flex-wrap gap-4 justify-center">
+      <Card className="sm:w-96 md:w-72 lg:w-96 h-auto p-4 sm:p-8">
         <p className="text-zinc-950 font-semibold">Meticulous.</p>
         <p>
           {" "}
@@ -14,7 +14,7 @@ export const TextInfoSessãoPrice = () => {
         </p>
       </Card>
 
-      <Card className="w-96 h-[186px]  p-8">
+      <Card className="sm:w-96 md:w-72 lg:w-96 h-auto p-4 sm:p-8">
         <p className="text-zinc-950 font-semibold">Efficient. </p>
         <p>
           {" "}
@@ -22,7 +22,7 @@ export const TextInfoSessãoPrice = () => {
           most of the work was done years ago.
         </p>
       </Card>
-      <Card className="w-96 h-[186px]  p-8">
+      <Card className="sm:w-96 md:w-72 lg:w-96 h-auto p-4 sm:p-8">
         <p className="text-zinc-950 font-semibold">Adaptable.</p>
         <p>
           {" "}
@@ -31,7 +31,7 @@ export const TextInfoSessãoPrice = () => {
         </p>
       </Card>
 
-      <Card className="w-96 h-[186px] p-8 ">
+      <Card className="sm:w-96 md:w-72 lg:w-96 h-auto p-4 sm:p-8 ">
         <p className="text-zinc-950 font-semibold">Honest. </p>
         <p>
           {" "}
@@ -39,7 +39,7 @@ export const TextInfoSessãoPrice = () => {
           fact our clients never actually read anything.
         </p>
       </Card>
-      <Card className="w-96 h-[186px] p-8">
+      <Card className="sm:w-96 md:w-72 lg:w-96 h-auto p-4 sm:p-8">
         <p className="text-zinc-950 font-semibold">Loyal. </p>
         <p>
           {" "}
@@ -47,14 +47,13 @@ export const TextInfoSessãoPrice = () => {
           delivering a product, allowing us to invoice them for decades.
         </p>
       </Card>
-      <Card className="w-96 h-[186px] p-8 ">
-        <p className="text-zinc-950 font-semibold">Innovative. </p>
-        <p>
-          {" "}
-          The technological landscape is always evolving and so are we. We are
-          constantly on the lookout for new open source projects to clone.
-        </p>
-      </Card>
+      <Card className="sm:w-96 md:w-72 lg:w-96 h-auto p-4 sm:p-8">
+  <p className="text-zinc-950 font-semibold">Innovative.</p>
+  <p>
+    The technological landscape is always evolving and so are we. We are
+    constantly on the lookout for new open source projects to clone.
+  </p>
+</Card>
     </div>
   );
 };

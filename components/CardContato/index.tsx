@@ -3,43 +3,34 @@
 import { Card } from "@mui/material"
 import { CardHeader } from "../ui/card"
 import { Button } from "../ui/button"
+import Link from "next/link"
 
 
 
-export const CardContato =()=>{
-    
-    return(
+export const CardContato = () => {
+
+    return (
+
+    <div className=" mt-32 rounded-xl bg-neutral-950 sm-w-[70px]">
+  
+        <div className="p-20">
+          <h1 className="font-display text-3xl font-medium text-white [text-wrap:balance] sm:text-4xl">
+            Tell us about your project
+          </h1>
+          <div className="mt-6 flex">
+            <Button className="text-sm sm:text-base font-bold text-black rounded-full px-4 py-1.5 transition bg-white hover:bg-neutral-200">
+              Say Hey
+            </Button>
+          </div>
       
-        <div className="flex justify-center">
-
-       
-        <Card className="w-[1200px] h-[500px] bg-black rounded-3xl"  >
-            <CardHeader className="ml-44 " >
-                <h1 className="text-white font-normal text-4xl  mb-5 mt-28">Tell us about your project</h1>
-                <Button className="  w-28 py-5 bg-slate-50 text-black rounded-3xl font-bold hover:bg-slate-200 ">Say Hei</Button>
-                <h1 className=' flex justify-around text-zinc-800 mr-96 mt-36 '>____________________________________________________________________________</h1>
-               
-               <div className="mt-16 grid  grid-cols-2">
-
-                <div> 
-            <h1 className="text-white font-normal text-xl  mt-9 mb-7 ">Our offices</h1>
-              <h1 className="text-white font-bold text-sm mb-2">Copenhagen</h1>
-              <p  className="text-white font-light text-sm mb-2" >1 Carlsberg Gate</p>
-              <p  className="text-white font-light text-sm mb-2" >1260, København, Denmark</p>
-              </div> 
-
-              <div className="mt-24"> 
-                 <h1 className="text-white font-bold text-sm mb-2">Billund</h1>
-              <p  className="text-white font-light text-sm mb-2" >24 Lego Allé</p>
-              <p  className="text-white font-light text-sm mb-2" >7190, Billund, Denmark</p>
-               </div>
-
-               </div>
-               
-            </CardHeader>
-        
-        </Card>
+        <div className="mt-10 border-t border-white/10 pt-10">
+          <h3 className="font-display text-base font-semibold text-white">Our offices</h3>
         </div>
-      
-    )
+   
+   </div>
+</div>
+
+
+
+                    )
 }

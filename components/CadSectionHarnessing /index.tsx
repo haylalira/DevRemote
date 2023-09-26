@@ -10,7 +10,7 @@ import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 
 export function CardSectionHarnessing() {
   return (
-    <div className="flex justify-center gap-12 mt-32 mx-6">
+    <div className="flex flex-wrap justify-center gap-12 mt-32 mx-6  mb-36">
       <Card className="w-96 rounded-t-[30px]  rounded-b-[30px] h-96 flex-col">
         <CardContent className="font-extrabold text-2xl mt-24 flex flex-col items-center">
           <WebIcon sx={{ fontSize: "50px", mb: 1 }} /> 
